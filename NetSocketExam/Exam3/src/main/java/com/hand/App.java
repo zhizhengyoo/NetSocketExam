@@ -148,10 +148,10 @@ public class App
 		try {
 			String[] res = re.Mss();
 			if(new XmlTrans(res) != null){
-				System.out.println("XML文件创建成功");
+				System.out.println("XML鏂囦欢鍒涘缓鎴愬姛");
 			}
 //			if (new JsonC(res)!=null) {
-//				System .out . println("Json文件创建成功");
+//				System .out . println("Json鏂囦欢鍒涘缓鎴愬姛");
 //
 //			}
 
