@@ -15,6 +15,9 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
 
 class Tell{
 	public String[] Mss() throws IOException {
@@ -92,49 +95,49 @@ class XmlTrans{
 }
 
 
-//class JsonC{
-//	public JsonC(String[] res) {
-//		// TODO Auto-generated constructor stub
-//		JsonObject jo = new JsonObject() ;
-//		JsonArray ja = new JsonArray () ;
-//		JsonObject lan1 = new JsonObject () ;
-//		lan1 .addProperty ( "name", res[0] );
-//		lan1 .addProperty ( "open", res[1] );
-//		lan1 .addProperty ( "close", res[2] );
-//		lan1 .addProperty ( "current", res[3] );
-//		lan1 .addProperty ( "high", res[4] );
-//		lan1 .addProperty ( "low", res[5] );
-//
-//		ja.add ( lan1) ;
-//		jo .add ( "stock", ja );
-//		
-//		
-//		
-//		File file = new File("hand.json");
-//		FileOutputStream fos;
-//		try {
-//			fos = new FileOutputStream(file);
-//			OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
-//			osw.write(jo.toString());
-//			osw.flush();
-//			osw.close();
-//			fos.close();
-//
-//
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (UnsupportedEncodingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//
-//	}
-//}
+class JsonC{
+	public JsonC(String[] res) {
+		// TODO Auto-generated constructor stub
+		JsonObject jo = new JsonObject() ;
+		JsonArray ja = new JsonArray () ;
+		JsonObject lan1 = new JsonObject () ;
+		lan1 .addProperty ( "name", res[0] );
+		lan1 .addProperty ( "open", res[1] );
+		lan1 .addProperty ( "close", res[2] );
+		lan1 .addProperty ( "current", res[3] );
+		lan1 .addProperty ( "high", res[4] );
+		lan1 .addProperty ( "low", res[5] );
+
+		ja.add ( lan1) ;
+		jo .add ( "stock", ja );
+		
+		
+		
+		File file = new File("hand.json");
+		FileOutputStream fos;
+		try {
+			fos = new FileOutputStream(file);
+			OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
+			osw.write(jo.toString());
+			osw.flush();
+			osw.close();
+			fos.close();
+
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+}
 
 
 public class App 
@@ -150,10 +153,10 @@ public class App
 			if(new XmlTrans(res) != null){
 				System.out.println("XML文件创建成功");
 			}
-//			if (new JsonC(res)!=null) {
-//				System .out . println("Json文件创建成功");
-//
-//			}
+			if (new JsonC(res)!=null) {
+				System .out . println("Json文件创建成功");
+
+			}
 
 
 
